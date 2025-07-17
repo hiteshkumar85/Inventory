@@ -1,0 +1,35 @@
+form#add-sale {
+    width: 50%;
+    height: 400px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.228);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+form#add-sale h1 {
+    text-align: center;
+    padding-block: 10px;
+    background: #70a8f8;
+    width: 100%;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+form#add-sale select ,
+form#add-sale input {
+    padding-block: 1rem;
+    font-size: 16px;
+    width: 90%;
+    
+}
+
+form#add-sale button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+}

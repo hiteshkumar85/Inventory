@@ -1,0 +1,73 @@
+#dailySalesReport {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.dailySalesReportHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 20px;
+    background: #70a8f8;
+}
+
+.dailySalesReportHeader h1 {
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.dailySalesReportHeader form {
+    display: flex;
+}
+
+.dailySalesReportHeader form>input {
+    height: 30px;
+    width: 200px;
+    outline: none;
+    border: none;
+    padding: 0 5px;
+}
+
+.dailySalesReportHeader form> .filter_btn {
+    border: 1px solid white;
+    color: white;
+    text-shadow: 0 0 5px black;
+    background-color: #70a8f8;
+    font-size: 16px;
+    height: 30px;
+    width: 70px;
+}
+
+#dailySalesReport table {
+    width: 100%;
+    max-height: 500px;
+    overflow: scroll;
+    scrollbar-width: none;
+    background-color: #0000000e;
+    border-collapse: collapse; 
+}
+
+#dailySalesReport table td {
+    text-align: center;
+}
+
+#dailySalesReport table th:nth-child(1){
+    width: 10%;
+}
+#dailySalesReport table th:nth-child(2){
+    width: 25%;
+}
+#dailySalesReport table th:nth-child(3){
+    width: 25%;
+}
+#dailySalesReport table th:nth-child(4){
+    width: 10%;
+}
+#dailySalesReport table th:nth-child(5){
+    width: 15%;
+}
+
+#dailySalesReport table tfoot td:nth-child(1){
+    text-align: end;
+}

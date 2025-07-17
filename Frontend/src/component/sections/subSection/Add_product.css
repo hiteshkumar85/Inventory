@@ -1,0 +1,53 @@
+#addProduct {
+    width: 60%;
+    height: 300px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.279);
+    margin: 20px auto;
+}
+
+#addProduct h1 {
+    color: white;
+    text-shadow: 0 0 5px black;
+    background: #70a8f8;
+    text-align: center;
+    padding-block: 10px;
+} 
+
+#addProduct > div {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-block: 10px;
+}
+
+input#title {
+    width: 80%;
+    outline: none;
+    padding-inline: 10px;
+}
+
+select#category ,
+select#photo {
+    width: 40%;
+    outline: none;
+}
+
+input#quantity ,
+input#buyingPrice ,
+input#sellingprice {
+    width: 28.5%;
+    padding-inline: 10px;
+    outline: none;
+}
+
+#addProduct button {
+    height: 45px;
+    width: 150px;
+    font-size: 16px;
+    border: none;
+    margin: 10px auto;
+    display: block;
+    color: white;
+    text-shadow: 0 0 5px black;
+    background: #70a8f8;
+}

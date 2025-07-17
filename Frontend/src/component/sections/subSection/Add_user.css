@@ -1,0 +1,37 @@
+#add_user {
+    width: 350px;
+    height: 350px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.382);
+    border-radius: 5px;
+    margin: 5% auto;
+}
+
+#add_user h1 {
+    text-align: center;
+    padding-block: 0.5rem;
+    background: #70a8f8;
+}
+
+#add_user>div {
+    margin-block: 5px;
+    padding-inline: 20px;
+}
+
+#add_user>div>label {
+    display: block;
+}
+
+#add_user>div>input,
+#add_user>div>select {
+    width: 100%;
+    padding-block: 0.3rem;
+}
+
+#add_user>button {
+    display: block;
+    margin: 10% auto;
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+}

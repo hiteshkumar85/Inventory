@@ -1,0 +1,88 @@
+#product {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.productHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #70a8f8;
+}
+
+.productHeader h1 {
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.productHeader button {
+    border: none;
+}
+
+.productHeader .add_product_btn {
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+#product table {
+    width: 100%;
+    max-height: 500px;
+    overflow: scroll;
+    scrollbar-width: none;
+    background: #0000000e;
+    border-collapse: collapse;
+}
+
+#product table td {
+    text-align: center;
+}
+
+#product table th:nth-child(1) {
+    width: 5%;
+}
+
+#product table th:nth-child(2) {
+    width: 20%;
+}
+
+#product table th:nth-child(3) {
+    width: 15%;
+}
+
+#product table th:nth-child(4) {
+    width: 15%;
+}
+
+#product table th:nth-child(5) {
+    width: 10%;
+}
+
+#product table th:nth-child(6) {
+    width: 10%;
+}
+
+#product table th:nth-child(7) {
+    width: 10%;
+}
+
+#product table th:nth-child(8) {
+    width: 15%;
+}
+
+#product img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#product table td button {
+    height: 30px;
+    width: 30px;
+    margin-left: 2px;
+    background-color: transparent;
+    border: 1px solid black;
+}

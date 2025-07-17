@@ -1,0 +1,73 @@
+.groupContainer {
+    width: 90%;
+    min-height: 100px;
+    max-height: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.314);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.groupContainer>.groupHeader {
+    display: flex;
+    color: white;
+    text-shadow: 0 0 5px #000;
+    padding: 15px 10px;
+    justify-content: space-between;
+    background: #00000072;
+    background-color: #70a8f8;
+}
+
+.groupContainer>.groupHeader>button {
+    background: transparent;
+    border: none;
+}
+
+#add_group_btn {
+    text-decoration: none;
+    text-shadow: 0 0 5px #000;
+    color: white;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.334),
+        inset 2px 2px 5px rgba(0, 0, 0, 0.137);
+}
+
+.groupContainer>table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #bab5b527;
+}
+
+.groupContainer>table td {
+    text-align: center;
+}
+
+.groupContainer table tr th:nth-child(1) {
+    width: 5%;
+}
+
+.groupContainer table tr th:nth-child(2) {
+    width: 20%;
+}
+
+.groupContainer table tr th:nth-child(3) {
+    width: 5%;
+}
+
+.groupContainer table tr th:nth-child(4) {
+    width: 5%;
+}
+
+.groupContainer table tr th:nth-child(5) {
+    width: 5%;
+}
+
+.groupContainer table td button {
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    border: 1px solid black;
+    margin-left: 2px;
+}

@@ -1,0 +1,69 @@
+#categoriesContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.categories,
+.add_categories {
+    width: 450px;
+    margin-inline: auto;
+}
+
+.add_categories {
+    height: 150px;
+}
+
+.add_categories #addCategory {
+    padding: 10px;
+    background: #0000002d;
+}
+
+.categories h1,
+.add_categories h1 {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #70a8f8;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.add_categories input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+
+.add_categories button {
+    margin: 20px auto;
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: none;
+}
+
+.categories {
+    max-height: 500px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.categories table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0000002d;
+}
+
+.categories table td {
+    text-align: center;
+}
+
+.categories button {
+    height: 30px;
+    width: 30px;
+    margin-left: 2px;
+    border: 1px solid black;
+    background-color: transparent;
+}

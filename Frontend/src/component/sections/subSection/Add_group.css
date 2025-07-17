@@ -1,0 +1,37 @@
+#add_group {
+    width: 350px;
+    height: 350px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.382);
+    border-radius: 5px;
+    margin: 5% auto;
+}
+
+#add_group h1 {
+    text-align: center;
+    padding-block: 0.5rem;
+    background: #70a8f8;
+}
+
+#add_group > div {
+    margin-block: 5px;
+    padding-inline: 20px;
+}
+
+#add_group > div >label{
+    display: block;
+}
+
+#add_group >div>input ,
+#add_group > div> select#status{
+    width: 100%;
+    padding-block: 0.3rem;
+}
+
+#add_group > button {
+    display: block;
+    margin: 20% auto;
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+}

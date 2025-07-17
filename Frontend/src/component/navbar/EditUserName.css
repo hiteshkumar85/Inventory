@@ -1,0 +1,43 @@
+#editUserName form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background: rgba(88, 87, 87, 0.126);
+    padding: 5px;
+}
+
+#editUserName form h1 {
+    font-size: 20px;
+    word-spacing: 1px;
+    text-align: center;
+    padding-block: 10px;
+    color: white;
+    background: #70a8f8;
+    text-shadow: 0 0 5px black;
+}
+
+#editUserName form input {
+    height: 40px;
+    margin-block: 5px;
+    padding-inline: 5px;
+    outline: none;
+    border: none;
+}
+
+#editUserName form button {
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    font-weight: 550;
+    color: green;
+}
+
+#editUserName button.cancel {
+    height: 30px;
+    width: 100px;
+    margin: 10px 0;
+    border: none;
+    font-size: 16px;
+    font-weight: 550;
+    color: red;
+}

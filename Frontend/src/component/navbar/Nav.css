@@ -1,0 +1,44 @@
+.navbar {
+    color: white;
+    /* background: red; */
+    padding-block: 15px;
+    height: 100vh;
+    width: 18%;
+}
+
+.navbar h1 {
+    text-align: center;
+    padding-block: 12px;
+    text-shadow: 0 0 5px black;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 24px;
+}
+
+.links {
+    text-decoration: none;
+    padding-block: 10px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    display: block;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.subLinks {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}

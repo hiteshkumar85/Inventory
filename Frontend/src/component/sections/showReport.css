@@ -1,0 +1,82 @@
+#showReport {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+#showReport .report {
+    width: 90%;
+    height: 90%;
+    margin: 2% auto;
+    border: 1px solid black;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px 10px;
+    flex-direction: column;
+}
+
+.showReportHeader {
+    width: 90%;
+    text-align: center;
+}
+
+.showReportHeader h1 {
+    font-size: 27px;
+    margin-block: 10px;
+}
+
+.showReportHeader h4 {
+    margin-block: 5px;
+}
+
+div.btn {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.btn button {
+    height: 40px;
+    width: 100px;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+#showReport #table {
+    width: 90%;
+    margin-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#showReport #table td, 
+#showReport #table th {
+    border: 1px solid black;
+}
+
+#showReport #table th:nth-child(1){
+    width: 10%;
+}
+
+#showReport #table th:nth-child(4){
+    width: 10%;
+}
+
+#showReport #table th:nth-child(5){
+    width: 15%;
+}
+
+#showReport #table tfoot td:nth-child(1){
+    text-align: end;
+    padding-right: 10px;
+}
+
+@media print {
+  #print ,
+  #back {
+    display: none;
+  }
+}
