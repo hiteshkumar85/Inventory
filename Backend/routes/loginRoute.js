@@ -9,15 +9,13 @@ dotenv.config();
 router.post('/login', async (req, res) => {
     const { name, password } = req.body;
     const user = await User.findOne({ name });
+    res.send(user);
     if (!user || !(await bcrypt.compare(password, user.password))) {
         return res.status(401).json({ message: 'Invalid user details' });
     }
     user.lastLogin = new Date();
     await user.save();
     const token = jwt.sign({ id: user._id, name: user.name, role: user.role }, process.env.SECRETKEY, { expiresIn: '1h' });
-    res.send({
-        user,token
-    });
     res.json(token);
 });
 
