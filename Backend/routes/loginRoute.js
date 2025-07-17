@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
 router.post('/saveAdmin', async (req, res) => {
     try {
         const userCount = await User.countDocuments({});
-        res.send(user);
+        res.send(userCount);
         if (userCount === 0) {
             const name = process.env.USERNAME;
             const hashedPassword = await bcrypt.hash(process.env.USERPASSWORD, 10);
