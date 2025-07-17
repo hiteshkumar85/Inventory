@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 router.post('/login', async (req, res) => {
+    res.send(req.body);
     const { name, password } = req.body;
     const user = await User.findOne({ name });
     if (!user || !(await bcrypt.compare(password, user.password))) {
