@@ -8,6 +8,9 @@ const connectDB = require('./dbconnection');
 app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
+app.get('/', (req,res)=>{
+    res.send("backend deploy")
+});
 
 app.use('/api', require('./routes/loginRoute'));
 app.use(require('./middleware/tokenAuth'));
