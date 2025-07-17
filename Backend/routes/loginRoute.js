@@ -10,7 +10,6 @@ router.post('/login', async (req, res) => {
     const { name, password } = req.body;
     try {
         const user = await User.findOne({ name });
-        res.send(user);
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return res.status(401).json({ message: 'Invalid user details' });
         }
