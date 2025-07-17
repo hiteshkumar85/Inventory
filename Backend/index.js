@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const connectDB = require('./dbconnection');
 
-app.use(cors({origin: ['https://dulcet-puppy-ff17ab.netlify.app/']}));
+app.use(cors({origin: ['https://dulcet-puppy-ff17ab.netlify.app']}));
 
 app.use(bodyParser.json());
 dotenv.config();
