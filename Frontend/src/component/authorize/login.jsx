@@ -17,7 +17,7 @@ const login = () => {
 
   async function login(data) {
     try {
-      const res = await axios.post('/api/login', data);
+      const res = await axios.post('https://inventory-backend-63ui.onrender.com/api/login', data);
       localStorage.setItem('token', res.data);
       toast.success("welcome, Login successfully!");
       navigate('welcome');
@@ -31,7 +31,7 @@ const login = () => {
   
   // if all users are deleted, store a user 
   useEffect(()=>{
-    axios.post('/api/saveAdmin');
+    axios.post('https://inventory-backend-63ui.onrender.com/api/saveAdmin');
   },[]);
   
   const form = {
