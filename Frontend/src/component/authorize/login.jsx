@@ -20,7 +20,7 @@ const login = () => {
       const res = await axios.post('https://inventory-backend-63ui.onrender.com/api/login', data);
       localStorage.setItem('token', res.data);
       toast.success("welcome, Login successfully!");
-      navigate('welcome');
+      navigate('/welcome');
       reset();
     } catch (err) {
       if (err.response?.status === 401) {
