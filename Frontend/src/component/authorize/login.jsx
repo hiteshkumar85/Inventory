@@ -20,8 +20,8 @@ const login = () => {
       const res = await axios.post('https://inventory-backend-63ui.onrender.com/api/login', data);
       localStorage.setItem('token', res.data);
       toast.success("welcome, Login successfully!");
-      navigate('/welcome');
       reset();
+      navigate('/welcome');
     } catch (err) {
       if (err.response?.status === 401) {
         toast.error("Invalid User name and Password!");
@@ -44,10 +44,6 @@ const login = () => {
     boxShadow : "0 0 5px white",
     
   }
-  
-
-
-
 
   return (
     <form onSubmit={handleSubmit(login)} style={form}>

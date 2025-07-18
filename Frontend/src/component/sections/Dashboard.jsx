@@ -1,43 +1,36 @@
 import { useEffect, useState } from 'react'
 import './Dashboard.css'
 import axios from '../../api/axiosInstance'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const Dashboard = () => {
-  
+
   const [categoryCount, setCategoryCount] = useState(0);
   const [productCount, setProductCount] = useState(0);
   const [saleCount, setSaleCount] = useState(0);
   const [userCount, setUserCount] = useState(0);
-  useEffect(()=>{
-    // get the user count 
-    axios.get('/api/userCount').then((res)=>{
-      setUserCount(res.data);
-    }).catch((err)=>{
-      toast.error("Something went wrong!");
-    });
-    
-    // get the category count 
-    axios.get('/api/categoryCount').then((res)=>{
-      setCategoryCount(res.data);
-    }).catch((err)=>{
-      toast.error("Something went wrong!");
-    });
 
-    // get the product count 
-    axios.get('/api/productCount').then((res)=>{
-      setProductCount(res.data);
-    }).catch((err)=>{
-      toast.error("Something went wrong!");
-    });
+  useEffect(() => {
+    const fetchCounts = async () => {
+      try {
+        const [userRes, categoryRes, productRes, saleRes] = await Promise.all([
+          axios.get('/api/userCount'),
+          axios.get('/api/categoryCount'),
+          axios.get('/api/productCount'),
+          axios.get('/api/saleCount'),
+        ]);
+        setUserCount(userRes.data);
+        setCategoryCount(categoryRes.data);
+        setProductCount(productRes.data);
+        setSaleCount(saleRes.data);
+      } catch (err) {
+        toast.error("Something went wrong while fetching dashboard data!");
+      }
+    };
 
-    // get the sales count 
-    axios.get('/api/saleCount').then((res)=>{
-      setSaleCount(res.data);
-    }).catch((err)=>{
-      toast.error("Something went wrong!");
-    });
-  });
+    fetchCounts();
+  }, []);
+
 
   return (
     <section id='dashboard'>
