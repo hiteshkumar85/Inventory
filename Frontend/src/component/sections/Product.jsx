@@ -57,7 +57,7 @@ const Product = () => {
           {products.map((product, index) => (
             <tr key={product._id}>
               <td>{index + 1}</td>
-              <td><img src={`/uploadedImage/${product.photo}`} /></td>
+              <td><img src={`https://inventory-backend-63ui.onrender.com/uploadedImage/${product.photo}`} /></td>
               <td>{product.title}</td>
               <td>{product.category}</td>
               <td>{product.quantity}</td>

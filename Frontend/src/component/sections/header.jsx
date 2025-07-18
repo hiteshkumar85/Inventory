@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../../api/axiosInstance'
 import {toast} from 'react-toastify'
+import image from '../../assets/default.jpg'
+
 const header = () => {
 
   let d, m, y;
@@ -50,7 +52,7 @@ const header = () => {
       <div className="date">{d}/{m + 1}/{y}</div>
       <div className="profile" onClick={handleDropdown}>
         <div className="profilePhoto">
-          <img src={profile.image ? `src/assets/profileImage/${profile.image}` : `src/assets/default.jpg`} />
+          <img src={profile.image ? `src/assets/profileImage/${profile.image}` : image} />
         </div>
         <div className="profileName">
           {profile.name}
