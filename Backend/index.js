@@ -4,8 +4,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const connectDB = require('./dbconnection');
+const path = require('path');
 
 app.use(cors({origin: ['https://dulcet-puppy-ff17ab.netlify.app']}));
+
+app.use('/uploadedImage', express.static(path.join(__dirname, 'uploadedImage')));
+app.use('/profileImage', express.static(path.join(__dirname, 'profileImage')));
 
 app.use(bodyParser.json());
 dotenv.config();

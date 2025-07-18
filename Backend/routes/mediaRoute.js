@@ -6,7 +6,7 @@ const multer = require('multer');
 const fs = require('fs');
 
 const storage = multer.diskStorage({
-    destination: './../Frontend/public/uploadedImage/',
+    destination: 'uploadedImage/',
     filename: function (req, file, cb) {
         cb(null, Date.now() + path.extname(file.originalname));
     }
@@ -46,7 +46,7 @@ router.delete('/photo/:id', async (req, res) => {
     try {
         // delete image from the react folder 
         const image = await Photo.findOne({ "_id": id });
-        const imagePath = path.join(__dirname, `..\\..\\Frontend\\public\\uploadedImage\\${image.imageName}`);
+        const imagePath = path.join(__dirname, `uploadedImage\\${image.imageName}`);
         fs.unlink(imagePath, (err, data)=>{
             console.log(err);
         });

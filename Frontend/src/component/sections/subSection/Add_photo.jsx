@@ -17,7 +17,7 @@ const Add_photo = () => {
     const formData = new FormData();
     formData.append('image', file);
     try{
-      await axios.post('/api/photo', formData);
+      await axios.post('https://inventory-backend-63ui.onrender.com/api/photo', formData);
       toast.success("Photo added successfully!");
     } catch (err) {
       toast.error("Something went wrong!");      

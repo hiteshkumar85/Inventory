@@ -52,7 +52,7 @@ const header = () => {
       <div className="date">{d}/{m + 1}/{y}</div>
       <div className="profile" onClick={handleDropdown}>
         <div className="profilePhoto">
-          <img src={profile.image ? `src/assets/profileImage/${profile.image}` : image} />
+          <img src={profile.image ? `https://inventory-backend-63ui.onrender.com/profileImage/${profile.image}` : image} />
         </div>
         <div className="profileName">
           {profile.name}

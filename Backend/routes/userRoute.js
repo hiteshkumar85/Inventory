@@ -53,7 +53,7 @@ router.delete('/user/:id', async (req, res) => {
     try {
         const user = await User.findById(id);
         if (user.image) {
-            const imagePath = path.join(__dirname, `..\\..\\Frontend\\public\\profileImage\\${user.image}`);
+            const imagePath = path.join(__dirname, `profileImage\\${user.image}`);
             fs.unlink(imagePath, (err, data) => {
                 console.log(err);
             });
@@ -115,7 +115,7 @@ router.get('/user/:id', async (req, res) => {
 });
 
 const storage = multer.diskStorage({
-    destination: './../Frontend/public/profileImage/',
+    destination: 'profileImage/',
     filename: function (req, file, cb) {
         cb(null, Date.now() + path.extname(file.originalname));
     }
@@ -130,7 +130,7 @@ router.post('/changeUserImage', upload.single('image'), async (req, res) => {
         let user = await User.findOne({ name: userName });
 
         if (user.image) {
-            const imagePath = path.join(__dirname, `..\\..\\Frontend\\public\\profileImage\\${user.image}`);
+            const imagePath = path.join(__dirname, `profileImage\\${user.image}`);
             fs.unlink(imagePath, (err, data) => {
                 console.log(err);
             });
