@@ -12,21 +12,23 @@ const Add_photo = () => {
     formState: { errors }
   } = useForm();
 
+  const [loading, setLoading] = useState(false);
   async function addPhotoForm(data) {
     const file = data.photo[0];
     const formData = new FormData();
     formData.append('image', file);
-    try{
+    try {
+      setLoading(true);
       await axios.post('https://inventory-backend-63ui.onrender.com/api/photo', formData);
       toast.success("Photo added successfully!");
+      reset();
+      navigate('/media-files');
     } catch (err) {
-      toast.error("Something went wrong!");      
+      toast.error("Something went wrong!");
     }
-
-    reset();
-    navigate(-1);
+    setLoading(false);
   }
-  
+
   const h = {
     "width": "400px",
     "boxShadow": "2px 2px 5px black",
@@ -39,8 +41,10 @@ const Add_photo = () => {
   return (
     <form id='add_photo' onSubmit={handleSubmit(addPhotoForm)} style={h}>
       <input type="file" accept='image/*'
-        {...register('photo', { required: true })} />
-      <button style={{ "padding": "5px 30px" }}>Upload</button>
+        {...register('photo')} required />
+      <button disabled={loading} style={{ padding: '5px 30px' }}>
+        {loading ? 'Uploading...' : 'Upload'}
+      </button>
     </form>
   )
 }

@@ -6,13 +6,18 @@ import { toast } from 'react-toastify'
 
 const Manage_user = () => {
   const [users, setUsers] = useState([]);
-  useEffect(() => {
-    axios.get('/api/user').then((res) => {
+  const fetchUsers = async () => {
+    try {
+      const res = await axios.get('/api/user');
       setUsers(res.data);
-    }).catch((err) => {
+    } catch (err) {
       toast.error("Something went wrong!");
-    })
-  });
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   const navigate = useNavigate();
   const updateUser = (id) => {
@@ -23,6 +28,7 @@ const Manage_user = () => {
     await axios.delete(`/api/user/${id}`).then(() => {
       setUsers(users.filter(user => user._id !== id));
       toast.warn("User deleted successfully!");
+      fetchUsers();
     }).catch((err) => {
       toast.error("Something went wrong!");
     });

@@ -17,12 +17,15 @@ const Add_group = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const groupId = location.search.slice(1,);
+  const [loading, setLoading] = useState(false);
 
   const addGroupForm = async (data) => {
+    setLoading(true);
     if (!groupId) {
       try {
         await axios.post('/api/group', data);
         toast.success("Group added successfully!");
+        navigate('/manage-group');
       }
       catch (err) {
         if (err.response?.status === 409) {
@@ -37,6 +40,7 @@ const Add_group = () => {
       try {
         await axios.put(`/api/group/${groupId}`, data);
         toast.info("Group updated successfully!");
+        navigate('/manage-group');
       } catch (err) {
         if (err.response?.status === 409) {
           toast.error("Group name already exists!");
@@ -48,7 +52,7 @@ const Add_group = () => {
       }
     }
     reset();
-    navigate('/manage-group');
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -58,14 +62,14 @@ const Add_group = () => {
         setValue('level', res.data.level);
         setValue('status', res.data.status);
       }).catch((err) => {
-        toast.error("Something went wrong!");
+        toast.error("Failed to fetch group data!");
       });
     }
-  }, []);
+  }, [groupId, setValue]);
 
   return (
     <form id='add_group' onSubmit={handleSubmit(addGroupForm)}>
-      <h1>Add new group</h1>
+      <h1>{groupId ? 'Update Group' : 'Add New Group'}</h1>
       <hr />
       <div>
         <label htmlFor="name">Group Name</label>
@@ -86,7 +90,9 @@ const Add_group = () => {
         </select>
       </div>
       {(errors.name || errors.level || errors.status) && <span className='errorMsg'>All field are required.</span>}
-      <button>Add Group</button>
+      <button disabled={loading}>
+        {loading ? 'Please wait...' : groupId ? 'Update Group' : 'Add Group'}
+      </button>
     </form>
   )
 }

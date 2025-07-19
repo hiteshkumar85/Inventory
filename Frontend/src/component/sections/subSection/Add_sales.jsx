@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import axios from '../../../api/axiosInstance'
 import { useLocation, useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const Add_sales = () => {
 

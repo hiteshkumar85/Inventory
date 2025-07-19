@@ -14,8 +14,8 @@ router.post('/user', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     if (loginPerson.role == 'Admin') {
         try {
-            if (!name.trim()) {
-                return res.status(400).json("User name is required!");
+            if (!name.trim() || !password.trim()) {
+                return res.status(400).json("Username and password required!");
             }
             const userExist = await User.findOne({ name });
             if (userExist) {

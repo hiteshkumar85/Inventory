@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 import axios from '../../api/axiosInstance'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const Profile = () => {
 
@@ -15,7 +15,7 @@ const Profile = () => {
       setUser(res.data);
     });
   }
-  
+
   const navigate = useNavigate();
   const handleChangeImage = async (e) => {
     const file = e.target.files[0];
@@ -30,7 +30,7 @@ const Profile = () => {
     }
     navigate('/profile');
   };
-  useEffect(getProfile,[]);
+  useEffect(getProfile, []);
 
   return (
     <section id="profileSection">

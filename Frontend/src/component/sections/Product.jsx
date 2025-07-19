@@ -10,12 +10,12 @@ const Product = () => {
   useEffect(() => {
     axios.get('/api/product')
       .then((res) => {
-        setProduct(res.data); 
+        setProduct(res.data);
       })
       .catch((err) => {
         toast.error("Something went wrong!");
       });
-  },[]);
+  }, []);
 
   const deleteProduct = async (id) => {
     await axios.delete(`/api/product/${id}`)
@@ -29,7 +29,7 @@ const Product = () => {
   };
 
   const updateProduct = async (id) => {
-    navigate(`add-product/?${id}`);
+    navigate(`/product/add-product/?${id}`);
   }
   return (
     <section id='product'>

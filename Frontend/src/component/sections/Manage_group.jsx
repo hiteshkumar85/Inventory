@@ -1,4 +1,4 @@
-import {useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './Manage_group.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../../api/axiosInstance';
@@ -18,14 +18,14 @@ const Manage_group = () => {
   }
 
   const deleteGroup = async (id) => {
-    await axios.delete(`/api/group/${id}`).then(()=>{
-      setGroups(groups.filter(group => group._id !== id));
+    await axios.delete(`/api/group/${id}`).then(() => {
+      setGroups(groups => groups.filter(group => group._id !== id));
       toast.info("Group deleted successfully!");
-    }).catch((err)=> {
+    }).catch((err) => {
       toast.error("Something went wrong!");
     });
   }
-  
+
   return (
     <div className='groupContainer'>
       <div className="groupHeader">

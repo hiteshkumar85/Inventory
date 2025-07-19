@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import { useEffect } from 'react';
 
-const login = () => {
+const Login = () => {
 
   const {
     register,
@@ -18,7 +18,7 @@ const login = () => {
   async function login(data) {
     try {
       const res = await axios.post('https://inventory-backend-63ui.onrender.com/api/login', data);
-      localStorage.setItem('token', res.data);
+      localStorage.setItem('token', res.data.token);
       toast.success("welcome, Login successfully!");
       reset();
       navigate('/welcome');
@@ -65,4 +65,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

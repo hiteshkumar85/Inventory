@@ -20,8 +20,8 @@ router.post('/sale', async (req, res) => {
         if (!name.trim() || !category.trim()) {
             return res.status(400).json("Sale name and category is required!");
         }
-        const isExist = await Sale.findOne({name, category, date});
-        if(isExist) {
+        const isExist = await Sale.findOne({ name, category, date });
+        if (isExist) {
             return res.status(409).json("Sale already exists!");
         }
         const newSale = new Sale({ name, category, quantity, date });
@@ -50,8 +50,8 @@ router.put('/sale/:id', async (req, res) => {
         if (!name.trim() || !category.trim()) {
             return res.status(400).json("Sale name and category is required!");
         }
-        const isExist = await Sale.findOne({name, category, date});
-        if(isExist) {
+        const isExist = await Sale.findOne({ name, category, date });
+        if (isExist) {
             return res.status(409).json("Sale already exists!");
         }
         const sale = await Sale.findOne({ name: name, category: category });

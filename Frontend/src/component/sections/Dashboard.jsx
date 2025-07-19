@@ -5,31 +5,26 @@ import { toast } from 'react-toastify'
 
 const Dashboard = () => {
 
-  const [categoryCount, setCategoryCount] = useState(0);
-  const [productCount, setProductCount] = useState(0);
-  const [saleCount, setSaleCount] = useState(0);
-  const [userCount, setUserCount] = useState(0);
+  const [counts, setCounts] = useState({
+    categoryCount: 0,
+    productCount: 0,
+    saleCount: 0,
+    userCount: 0
+  });
 
   useEffect(() => {
-    const fetchCounts = async () => {
+    const fetchDashboardCounts = async () => {
       try {
-        const [userRes, categoryRes, productRes, saleRes] = await Promise.all([
-          axios.get('/api/userCount'),
-          axios.get('/api/categoryCount'),
-          axios.get('/api/productCount'),
-          axios.get('/api/saleCount'),
-        ]);
-        setUserCount(userRes.data);
-        setCategoryCount(categoryRes.data);
-        setProductCount(productRes.data);
-        setSaleCount(saleRes.data);
+        const res = await axios.get('/api/dashboardCounts');
+        setCounts(res.data);
       } catch (err) {
         toast.error("Something went wrong while fetching dashboard data!");
       }
     };
 
-    fetchCounts();
+    fetchDashboardCounts();
   }, []);
+
 
 
   return (
@@ -38,28 +33,28 @@ const Dashboard = () => {
         <div>
           <i className="fa-solid fa-user"></i>
           <div>
-            <h1>{userCount}</h1>
+            <h1>{counts.userCount}</h1>
             <h3>Users</h3>
           </div>
         </div>
         <div>
           <i className="fa-solid fa-list"></i>
           <div>
-            <h1>{categoryCount}</h1>
+            <h1>{counts.categoryCount}</h1>
             <h3>Categories</h3>
           </div>
         </div>
         <div>
           <i className="fa-solid fa-cart-shopping"></i>
           <div>
-            <h1>{productCount}</h1>
+            <h1>{counts.productCount}</h1>
             <h3>Product</h3>
           </div>
         </div>
         <div>
           <i className="fa-solid fa-dollar-sign"></i>
           <div>
-            <h1>{saleCount}</h1>
+            <h1>{counts.saleCount}</h1>
             <h3>Sales</h3>
           </div>
         </div>

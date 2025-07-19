@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../../api/axiosInstance'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import image from '../../assets/default.jpg'
 
 const header = () => {
 
-  let d, m, y;
-  const showDate = () => {
-    const date = new Date();
-    d = date.getDate();
-    m = date.getMonth();
-    y = date.getFullYear();
-  }
+  const [date, setDate] = useState(new Date());
 
-  showDate()
-  setInterval(showDate, 1000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   const navigate = useNavigate();
 
   const logOut = () => {
@@ -29,34 +28,33 @@ const header = () => {
   const handleDropdown = () => {
     setDropdown(!dropdown);
   };
-  
-  let [profile, setProfile] = useState({name : '', image: ''});
 
-  useEffect(()=>{
-    axios.get('/api/profile').then((res)=>{
+  let [profile, setProfile] = useState({ name: '', image: '' });
+
+  useEffect(() => {
+    axios.get('/api/profile').then((res) => {
       setProfile(res.data);
-    }).catch((err)=>{
+    }).catch((err) => {
       toast.error("Something went wrong!");
     });
-  },[]);
+  }, []);
 
-  useEffect(()=>{
-  });
-  if(!profile) {
-    profile = {name : '', image: ''};
+
+  if (!profile) {
+    profile = { name: '', image: '' };
     logOut();
   }
 
   return (
     <div className='header'>
-      <div className="date">{d}/{m + 1}/{y}</div>
+      <div className="date">{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</div>
       <div className="profile" onClick={handleDropdown}>
         <div className="profilePhoto">
           <img src={profile.image ? `https://inventory-backend-63ui.onrender.com/profileImage/${profile.image}` : image} />
         </div>
         <div className="profileName">
           {profile.name}
-          <span><i class="fa-solid fa-caret-down"></i></span>
+          <span><i className="fa-solid fa-caret-down"></i></span>
         </div>
       </div>
       {dropdown && <div className="dropdown">

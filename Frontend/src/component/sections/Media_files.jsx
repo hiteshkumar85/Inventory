@@ -10,14 +10,18 @@ const Media_files = () => {
   const [photos, setPhotos] = useState([]);
   // view all photos fetch from the database
   useEffect(() => {
-    axios.get('/api/photo')
-      .then((res) => {
-        setPhotos(res.data);
-      })
-      .catch((err) => {
-        toast.error("Something went wrong!");
-      })
-  }, [photos]);
+    const fetchPhotos = () => {
+      axios.get('/api/photo')
+        .then((res) => {
+          setPhotos(res.data);
+        })
+        .catch((err) => {
+          toast.error("Something went wrong!");
+        })
+    }
+
+    fetchPhotos();
+  }, []);
 
   // delete photo from database
   const deletePhoto = async (id) => {
@@ -25,6 +29,7 @@ const Media_files = () => {
       .then(() => {
         setPhotos(photos.filter(photo => photo._id !== id));
         toast.warn("Photo deleted successfully!");
+        fetchPhotos();
       })
       .catch((err) => {
         toast.error("Something went wrong!");

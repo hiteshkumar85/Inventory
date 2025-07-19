@@ -55,7 +55,7 @@ const Add_product = () => {
                 });
         }
 
-    }, []);
+    }, [paramId]);
 
 
     async function addProductForm(data) {
@@ -64,7 +64,7 @@ const Add_product = () => {
                 await axios.post('/api/product', data);
                 toast.success("Product added successfully!");
             } catch (err) {
-                if(err.response?.status === 400) {
+                if (err.response?.status === 400) {
                     toast.error("Product title and category is required!");
                 } else if (err.response?.status === 409) {
                     toast.error("Product already exists!");
@@ -75,10 +75,10 @@ const Add_product = () => {
         }
         else {
             try {
-                 await axios.put(`/api/product/${paramId}`, data);
-                 toast.info("Product updated successfully!");
+                await axios.put(`/api/product/${paramId}`, data);
+                toast.info("Product updated successfully!");
             } catch (err) {
-                if(err.response?.status === 400) {
+                if (err.response?.status === 400) {
                     toast.error("Product title and category is required!");
                 } else if (err.response?.status === 409) {
                     toast.error("Product already exists!");
@@ -94,7 +94,7 @@ const Add_product = () => {
 
     return (
         <form id="addProduct" onSubmit={handleSubmit(addProductForm)}>
-            <h1>ADD NEW PRODUCT</h1>
+            <h1>{paramId ? 'Update Product' : 'Add New Product'}</h1>
             <hr />
             <div>
                 <input type="text" placeholder='Product Title' id='title'
@@ -127,7 +127,7 @@ const Add_product = () => {
                 />
             </div>
             {(errors.title || errors.category || errors.photo || errors.quantity || errors.buyingPrice || errors.sellingPrice) && <span className='errorMsg'>All inputs are requied.</span>}
-            <button>Add Product</button>
+            <button>{paramId ? 'Update Product' : 'Add Product'}</button>
         </form>
     )
 }

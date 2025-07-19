@@ -66,7 +66,7 @@ const Add_user = () => {
 
   return (
     <form id='add_user' onSubmit={handleSubmit(addNewUser)}>
-      <h1>Add new user</h1>
+      <h1>{userId ? "Update User" : "Add New User"}</h1>
       <hr />
       <div>
         <label htmlFor="name">Name</label>
@@ -95,7 +95,7 @@ const Add_user = () => {
           <option value="Inactive">Inactive</option>
         </select>
       </div>
-      <button>Add User</button>
+      <button>{userId ? "Update User" : "Add User"}</button>
     </form>
   )
 }

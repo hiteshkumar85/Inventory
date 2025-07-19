@@ -3,7 +3,7 @@ import './ReportBydate.css'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import axios from '../../api/axiosInstance';
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 const ReportBydate = () => {
 
   const {

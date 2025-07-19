@@ -15,8 +15,10 @@ const Categories = () => {
     } = useForm();
 
     const [button, setButton] = useState("Add Category");
+    const [loading, setLoading] = useState(false);
     const [id, setId] = useState();
     async function onSubmit(data) {
+        setLoading(true);
         if (button == 'Add Category') {
             addCategoryForm(data);
         }
@@ -26,6 +28,7 @@ const Categories = () => {
                     setCategories(categories.filter(category => category._id !== id));
                     toast.info("Category updated successfully!");
                     setButton('Add Category');
+                    fetchCategories();
                 })
                 .catch((err) => {
                     if (err.response?.status === 409) {
@@ -39,25 +42,30 @@ const Categories = () => {
         }
 
         reset();
+        setLoading(false);
     }
 
     // view all category 
     const [categories, setCategories] = useState([]);
+
+    const fetchCategories = async () => {
+        try {
+            const res = await axios.get('/api/category');
+            setCategories(res.data);
+        } catch (err) {
+            toast.error("Something went wrong!");
+        }
+    };
     useEffect(() => {
-        axios.get('/api/category')
-            .then((res) => {
-                setCategories(res.data)
-            })
-            .catch((err) => {
-                toast.error("Something went worng!");
-            })
-    }, [categories]);
+        fetchCategories();
+    }, []);
 
     // added new category 
     const addCategoryForm = async (data) => {
         try {
             await axios.post('/api/category', data);
             toast.success("Category added successfully!");
+            fetchCategories();
         } catch (err) {
             if (err.response?.status === 409) {
                 toast.error("Category already exists!");
@@ -76,6 +84,7 @@ const Categories = () => {
             .then(() => {
                 setCategories(categories.filter(category => category._id !== id));
                 toast.warn("Category deleted successfully!");
+                fetchCategories();
             })
             .catch((err) => {
                 toast.error("Something went wrong!");
@@ -132,7 +141,7 @@ const Categories = () => {
                     />
                     {errors.category && <span className='errorMsg'>{errors.category.message}</span>}
 
-                    <button>{button}</button>
+                    <button disabled={loading}>{loading ? 'Please wait...' : button}</button>
                 </form>
             </div>
         </section>
