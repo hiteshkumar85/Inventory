@@ -9,7 +9,7 @@ const app = express();
 connectDB();
 
 
-app.use(cors({ origin: ['https://dulcet-puppy-ff17ab.netlify.app'], credentials: true }));
+app.use(cors({ origin: ['https://inventory85.netlify.app/'], credentials: true }));
 app.use(bodyParser.json());
 
 app.use('/uploadedImage', express.static(path.join(__dirname, 'uploadedImage')));
