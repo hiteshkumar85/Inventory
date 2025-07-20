@@ -4,3 +4,23 @@
     box-sizing: border-box;
     user-select: none;
 }
+
+#root {
+    display: block;
+}
+
+#mobile-warning {
+    display: none;
+    text-align: center;
+    margin-block: 10%;
+}
+
+@media screen and (max-width: 420px) {
+    #mobile-warning {
+        display: block;
+    }
+
+    #root {
+        display: none;
+    }
+}

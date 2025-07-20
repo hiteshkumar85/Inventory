@@ -11,18 +11,26 @@ const Dashboard = () => {
     saleCount: 0,
     userCount: 0
   });
+  const [sales, setSales] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchDashboardCounts = async () => {
-      try {
-        const res = await axios.get('/api/dashboardCounts');
+    try {
+      axios.get('/api/dashboardCounts').then((res) => {
         setCounts(res.data);
-      } catch (err) {
-        toast.error("Something went wrong while fetching dashboard data!");
-      }
-    };
+      });
 
-    fetchDashboardCounts();
+      axios.get('/api/latestSales').then((res) => {
+        setSales(res.data);
+      });
+
+      axios.get('/api/recentlyAddProduct').then((res) => {
+        setProducts(res.data);
+      });
+    } catch (err) {
+      toast.error("Something went wrong while fetching dashboard data!");
+    }
+
   }, []);
 
 
@@ -61,26 +69,6 @@ const Dashboard = () => {
       </div>
       <div className='detailContainer'>
         <div>
-          <h3>HIGHEST SELLING PRODUCT</h3>
-          <hr />
-          <table>
-            <thead>
-              <tr>
-                <th>Tile</th>
-                <th>Total sold</th>
-                <th>Total Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>A4*2</td>
-                <td>2</td>
-                <td>100</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
           <h3>LATEST SALES</h3>
           <hr />
           <table>
@@ -88,20 +76,17 @@ const Dashboard = () => {
               <tr>
                 <th>Product Name</th>
                 <th>Date</th>
-                <th>Total Sales</th>
+                <th>Quantity</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>A4*2</td>
-                <td>2</td>
-                <td>100</td>
-              </tr>
-              <tr>
-                <td>A4*2</td>
-                <td>2</td>
-                <td>100</td>
-              </tr>
+              {sales.map((sale) => {
+                <tr key={sale._id}>
+                  <td>{sale.name}</td>
+                  <td>{sale.date}</td>
+                  <td>{sale.quantity}</td>
+                </tr>
+              })}
             </tbody>
           </table>
         </div>
@@ -109,15 +94,21 @@ const Dashboard = () => {
           <h3>RECENTLY ADDED PRODUCT</h3>
           <hr />
           <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Selling Price</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr>
-                <td>A4*2</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>A4*2</td>
-                <td>2</td>
-              </tr>
+              {products.map((product) => {
+                <tr key={product._id}>
+                  <td>{product.title}</td>
+                  <td>{product.category}</td>
+                  <td>{product.sellingPrice}</td>
+                </tr>
+              })}
             </tbody>
           </table>
         </div>

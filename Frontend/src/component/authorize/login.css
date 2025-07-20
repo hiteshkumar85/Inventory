@@ -1,0 +1,45 @@
+.loginContainer {
+    height: 400px;
+    width: 370px;
+    border-radius: 0.3rem;
+    padding: 15px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px white;
+}
+
+.loginContainer h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.loginContainer div {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer div> label {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.loginContainer div> input {
+    height: 40px;
+    padding-inline: 5px;
+    border: none;
+    outline: none;
+}
+
+.loginContainer button {
+    height: 40px;
+    width: 150px;
+    margin: 30% auto;
+    display: block;
+    font-size: 16px;
+    font-weight: 550;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+

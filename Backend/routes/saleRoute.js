@@ -120,4 +120,22 @@ router.get('/sale/:id', async (req, res) => {
     }
 })
 
+router.get('/latestSales', async (req, res) => {
+    try {
+        const latestSales = await Sale.find().sort({ date: -1 }).limit(3);
+        res.json(latestSales);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+router.get('/recentlyAddProduct', async (req, res) => {
+    try {
+        const recentlyAddProduct = await Product.find().sort({date: -1}).limit(3);
+        res.json(recentlyAddProduct);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;

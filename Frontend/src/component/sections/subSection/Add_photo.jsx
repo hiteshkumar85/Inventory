@@ -2,7 +2,7 @@ import axios from '../../../api/axiosInstance'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
+import { useState } from 'react'
 const Add_photo = () => {
   const navigate = useNavigate();
   const {
