@@ -80,13 +80,14 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {sales.map((sale) => {
+              {sales.map((sale) => (
                 <tr key={sale._id}>
                   <td>{sale.name}</td>
                   <td>{sale.date}</td>
                   <td>{sale.quantity}</td>
                 </tr>
-              })}
+              )
+              )}
             </tbody>
           </table>
         </div>
@@ -102,13 +103,14 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => {
+              {products.map((product) => (
                 <tr key={product._id}>
                   <td>{product.title}</td>
                   <td>{product.category}</td>
                   <td>{product.sellingPrice}</td>
                 </tr>
-              })}
+              )
+              )}
             </tbody>
           </table>
         </div>
