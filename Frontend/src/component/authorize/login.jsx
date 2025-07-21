@@ -11,7 +11,7 @@ const Login = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm();
 
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const Login = () => {
           {...register('password', { required: true })} placeholder='Enter the user password'/>
       </div>
       {(errors.name || errors.password) && <span>Please fill all inputs.</span>}
-      <button>LOGIN</button>
+      <button disabled={isSubmitted}>{isSubmitted?'logging in...':'login'}</button>
     </form>
   )
 }

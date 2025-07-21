@@ -9,17 +9,16 @@ const Media_files = () => {
 
   const [photos, setPhotos] = useState([]);
   // view all photos fetch from the database
+  const fetchPhotos = () => {
+    axios.get('/api/photo')
+      .then((res) => {
+        setPhotos(res.data);
+      })
+      .catch((err) => {
+        toast.error("Something went wrong!");
+      })
+  }
   useEffect(() => {
-    const fetchPhotos = () => {
-      axios.get('/api/photo')
-        .then((res) => {
-          setPhotos(res.data);
-        })
-        .catch((err) => {
-          toast.error("Something went wrong!");
-        })
-    }
-
     fetchPhotos();
   }, []);
 

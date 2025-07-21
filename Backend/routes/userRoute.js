@@ -53,7 +53,7 @@ router.delete('/user/:id', async (req, res) => {
     try {
         const user = await User.findById(id);
         if (user.image) {
-            const imagePath = path.join(__dirname, `profileImage\\${user.image}`);
+            const imagePath = path.join(__dirname, `..\\profileImage\\${user.image}`);
             fs.unlink(imagePath, (err, data) => {
                 console.log(err);
             });
@@ -130,7 +130,7 @@ router.post('/changeUserImage', upload.single('image'), async (req, res) => {
         let user = await User.findOne({ name: userName });
 
         if (user.image) {
-            const imagePath = path.join(__dirname, `profileImage\\${user.image}`);
+            const imagePath = path.join(__dirname, `..\\profileImage\\${user.image}`);
             fs.unlink(imagePath, (err, data) => {
                 console.log(err);
             });

@@ -12,7 +12,7 @@ const Add_user = () => {
     handleSubmit,
     reset,
     setValue,
-    formState: { errors },
+    formState: { isSubmitting },
   } = useForm();
 
   const navigate = useNavigate();
@@ -95,7 +95,7 @@ const Add_user = () => {
           <option value="Inactive">Inactive</option>
         </select>
       </div>
-      <button>{userId ? "Update User" : "Add User"}</button>
+      <button disabled={isSubmitting}>{isSubmitting? 'Please wait..': userId ? "Update User" : "Add User"}</button>
     </form>
   )
 }

@@ -13,7 +13,7 @@ const Add_product = () => {
         handleSubmit,
         reset,
         setValue,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm();
 
     const [categories, setCategories] = useState([]);
@@ -127,7 +127,7 @@ const Add_product = () => {
                 />
             </div>
             {(errors.title || errors.category || errors.photo || errors.quantity || errors.buyingPrice || errors.sellingPrice) && <span className='errorMsg'>All inputs are requied.</span>}
-            <button>{paramId ? 'Update Product' : 'Add Product'}</button>
+            <button disabled={isSubmitting}>{isSubmitting ? 'Please wait..' : paramId ? 'Update Product' : 'Add Product'}</button>
         </form>
     )
 }

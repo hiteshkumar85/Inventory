@@ -15,7 +15,7 @@ const Add_sales = () => {
     resetField,
     setValue,
     watch,
-    formState: { errors }
+    formState: { errors, isSubmitting }
   } = useForm();
 
   const [products, setProducts] = useState([]);
@@ -148,7 +148,7 @@ const Add_sales = () => {
 
   return (
     <form id='add-sale' onSubmit={handleSubmit(addSaleForm)}>
-      <h1>ADD NEW SALE</h1>
+      <h1>{editSale ? 'Update Sale' : 'Add New Sale'}</h1>
       <hr />
       <select {...register('name', { required: true })}>
         <option value="">Product Name</option>
@@ -167,7 +167,7 @@ const Add_sales = () => {
       {errors.quantity && <span className='errorMsg'>{errors.quantity.message}</span>}
       <input type="date" {...register('date', { required: true })} disabled />
       {(errors.name || errors.pricePerProduct || errors.quantity || errors.date) && <span className='errorMsg'>All field are required.</span>}
-      <button>Add Sale</button>
+      <button disabled={isSubmitting}>{isSubmitting ? 'Please wait..' : editSale ? 'Update sale' : 'Add sale'}</button>
     </form>
   )
 }

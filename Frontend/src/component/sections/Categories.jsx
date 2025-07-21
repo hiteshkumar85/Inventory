@@ -11,14 +11,12 @@ const Categories = () => {
         handleSubmit,
         reset,
         setValue,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm();
 
     const [button, setButton] = useState("Add Category");
-    const [loading, setLoading] = useState(false);
     const [id, setId] = useState();
     async function onSubmit(data) {
-        setLoading(true);
         if (button == 'Add Category') {
             addCategoryForm(data);
         }
@@ -42,7 +40,6 @@ const Categories = () => {
         }
 
         reset();
-        setLoading(false);
     }
 
     // view all category 
@@ -141,7 +138,7 @@ const Categories = () => {
                     />
                     {errors.category && <span className='errorMsg'>{errors.category.message}</span>}
 
-                    <button disabled={loading}>{loading ? 'Please wait...' : button}</button>
+                    <button disabled={isSubmitting}>{isSubmitting ? 'Please wait...' : button}</button>
                 </form>
             </div>
         </section>

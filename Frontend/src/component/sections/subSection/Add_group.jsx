@@ -2,7 +2,7 @@ import './Add_group.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
 import axios from '../../../api/axiosInstance';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { toast } from 'react-toastify'
 const Add_group = () => {
 
@@ -11,16 +11,14 @@ const Add_group = () => {
     handleSubmit,
     reset,
     setValue,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const navigate = useNavigate();
   const location = useLocation();
   const groupId = location.search.slice(1,);
-  const [loading, setLoading] = useState(false);
 
   const addGroupForm = async (data) => {
-    setLoading(true);
     if (!groupId) {
       try {
         await axios.post('/api/group', data);
@@ -52,7 +50,6 @@ const Add_group = () => {
       }
     }
     reset();
-    setLoading(false);
   }
 
   useEffect(() => {
@@ -90,8 +87,8 @@ const Add_group = () => {
         </select>
       </div>
       {(errors.name || errors.level || errors.status) && <span className='errorMsg'>All field are required.</span>}
-      <button disabled={loading}>
-        {loading ? 'Please wait...' : groupId ? 'Update Group' : 'Add Group'}
+      <button disabled={isSubmitting}>
+        {isSubmitting ? 'Please wait..' : groupId ? 'Update Group' : 'Add Group'}
       </button>
     </form>
   )
