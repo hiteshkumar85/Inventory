@@ -46,9 +46,9 @@ router.delete('/photo/:id', async (req, res) => {
     try {
         // delete image from the react folder 
         const image = await Photo.findOne(id);
-        const imagePath = path.join(__dirname, `..\\uploadedImage\\${image.imageName}`);
+        const imagePath = path.join(__dirname, '..\\uploadedImage', image.imageName);
         fs.unlink(imagePath, (err, data) => {
-            console.log(err);
+            console.log(data);
         });
 
         // delete image from the database 
