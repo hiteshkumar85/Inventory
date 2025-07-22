@@ -11,7 +11,7 @@ const Login = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const navigate = useNavigate();
@@ -42,15 +42,15 @@ const Login = () => {
       <div>
         <label htmlFor="name">USER NAME</label>
         <input type="text" id='name'
-          {...register('name', { required: true })} placeholder='Enter the user name'/>
+          {...register('name', { required: true })} placeholder='Enter the user name' required/>
       </div>
       <div>
         <label htmlFor="password">PASSWORD</label>
         <input type="password" id='password'
-          {...register('password', { required: true })} placeholder='Enter the user password'/>
+          {...register('password', { required: true })} placeholder='Enter the user password' required/>
       </div>
       {(errors.name || errors.password) && <span>Please fill all inputs.</span>}
-      <button disabled={isSubmitted}>{isSubmitted?'logging in...':'login'}</button>
+      <button disabled={isSubmitting}>{isSubmitting?'logging in...':'login'}</button>
     </form>
   )
 }
