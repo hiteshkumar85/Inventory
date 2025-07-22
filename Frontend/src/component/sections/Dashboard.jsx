@@ -53,14 +53,14 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cube"></i>
           <div>
             <h1>{counts.productCount}</h1>
             <h3>Product</h3>
           </div>
         </div>
         <div>
-          <i className="fa-solid fa-dollar-sign"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
           <div>
             <h1>{counts.saleCount}</h1>
             <h3>Sales</h3>
