@@ -17,7 +17,7 @@ const Add_photo = () => {
     const formData = new FormData();
     formData.append('image', file);
     try {
-      await axios.post('https://inventory-backend-63ui.onrender.com/api/photo', formData);
+      await axios.post(`${process.env.BACKEND_BASE_URL}/api/photo`, formData);
       toast.success("Photo added successfully!");
       reset();
       navigate('/media-files');

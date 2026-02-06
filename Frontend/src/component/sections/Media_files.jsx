@@ -56,7 +56,7 @@ const Media_files = () => {
           {photos.map((photo, index) => (
             <tr key={photo._id}>
               <td>{index + 1}</td>
-              <td><img src={`https://inventory-backend-63ui.onrender.com/uploadedImage/${photo.imageName}`} /></td>
+              <td><img src={`${process.env.BACKEND_BASE_URL}/uploadedImage/${photo.imageName}`} /></td>
               <td>{photo.imageName}</td>
               <td>
                 <button onClick={() => deletePhoto(photo._id)}>

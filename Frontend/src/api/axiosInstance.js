@@ -1,7 +1,9 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const axiosInstance = axios.create({
-  baseURL: 'https://inventory-backend-63ui.onrender.com',
+  baseURL: process.env.BACKEND_BASE_URL,
 });
 
 axiosInstance.interceptors.request.use(

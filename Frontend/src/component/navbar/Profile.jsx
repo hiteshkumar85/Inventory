@@ -36,7 +36,7 @@ const Profile = () => {
     <section id="profileSection">
       <div className="imageContainer">
         <div className="profileImage">
-          <img src={user.image ? `https://inventory-backend-63ui.onrender.com/profileImage/${user.image}` : image} />
+          <img src={user.image ? `${process.env.BACKEND_BASE_URL}/profileImage/${user.image}` : image} />
           <label htmlFor="edit-image">
             <i className='fa-solid fa-edit'></i>
           </label>
