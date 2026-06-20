@@ -29,6 +29,8 @@ router.post('/saveAdmin', async (req, res) => {
             const user = new User({ addedBy: "Owner", name, password: hashedPassword, role: "Admin", status: "Active" });
             await user.save();
             return res.json(user);
+        } else {
+            return res.json({ message: "Admin already exists" });
         }
     } catch (err) {
         return res.json({ message: err.message });

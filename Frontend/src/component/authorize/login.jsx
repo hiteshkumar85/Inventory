@@ -32,7 +32,7 @@ const Login = () => {
   
   // if all users are deleted, store a user 
   useEffect(()=>{
-    axios.post(`${import.meta.env.VITE_API_URL}/api/saveAmin`);
+    axios.post(`${import.meta.env.VITE_API_URL}/api/saveAdmin`);
   },[]);
   
   return (
