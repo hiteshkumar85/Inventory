@@ -1,37 +1,87 @@
 #add_user {
     width: 350px;
     height: 350px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.382);
-    border-radius: 5px;
+
     margin: 5% auto;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #add_user h1 {
     text-align: center;
     padding-block: 0.5rem;
-    background: #70a8f8;
+
+    background: #7c3aed;
+    color: #ffffff;
+
+    border-radius: 8px 8px 0 0;
 }
 
-#add_user>div {
-    margin-block: 5px;
+#add_user > div {
+    margin-block: 8px;
     padding-inline: 20px;
 }
 
-#add_user>div>label {
+#add_user > div > label {
     display: block;
+
+    margin-bottom: 5px;
+
+    color: #cbd5e1;
+    font-weight: 500;
 }
 
-#add_user>div>input,
-#add_user>div>select {
+#add_user > div > input,
+#add_user > div > select {
     width: 100%;
-    padding-block: 0.3rem;
+
+    padding: 8px 10px;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
+    outline: none;
 }
 
-#add_user>button {
+#add_user > div > input:focus,
+#add_user > div > select:focus {
+    border-color: #7c3aed;
+}
+
+#add_user > div > select option {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+#add_user > button {
     display: block;
+
     margin: 10% auto;
+
     height: 35px;
     width: 150px;
-    border-radius: 5px;
+
     border: none;
+    border-radius: 5px;
+
+    background: #7c3aed;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#add_user > button:hover {
+    background: #5b21b6;
 }

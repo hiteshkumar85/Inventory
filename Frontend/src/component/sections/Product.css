@@ -8,37 +8,76 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 10px 20px;
-    background: #70a8f8;
+
+    background: #7c3aed;
+    border-radius: 8px 8px 0 0;
 }
 
 .productHeader h1 {
-    color: white;
-    text-shadow: 0 0 5px black;
+    color: #ffffff;
+    text-shadow: none;
 }
 
 .productHeader button {
     border: none;
+    background: transparent;
 }
 
 .productHeader .add_product_btn {
     text-decoration: none;
+
+    color: #ffffff;
     font-size: 16px;
+
     display: inline-block;
-    padding: 10px 10px;
+    padding: 10px 12px;
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.productHeader .add_product_btn:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #product table {
     width: 100%;
+
     max-height: 500px;
     overflow: scroll;
     scrollbar-width: none;
-    background: #0000000e;
+
+    background: #1e293b;
+    color: #f8fafc;
+
     border-collapse: collapse;
+}
+
+#product table th {
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+    padding: 10px;
 }
 
 #product table td {
     text-align: center;
+
+    color: #cbd5e1;
+
+    border: 1px solid #334155;
+    padding: 10px;
+}
+
+#product table tr:nth-child(even) {
+    background: #172033;
 }
 
 #product table th:nth-child(1) {
@@ -76,13 +115,29 @@
 #product img {
     height: 50px;
     width: 50px;
+
     border-radius: 50%;
+
+    border: 2px solid #7c3aed;
+    object-fit: cover;
 }
 
 #product table td button {
     height: 30px;
     width: 30px;
+
     margin-left: 2px;
-    background-color: transparent;
-    border: 1px solid black;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 4px;
+
+    transition: 0.3s ease;
+}
+
+#product table td button:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
 }

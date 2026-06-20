@@ -17,55 +17,103 @@
 
 .add_categories #addCategory {
     padding: 10px;
-    background: #0000002d;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
 }
 
 .categories h1,
 .add_categories h1 {
     text-align: center;
     padding: 0.5rem;
-    background-color: #70a8f8;
-    color: white;
-    text-shadow: 0 0 5px black;
+    background: #7c3aed;
+    color: #ffffff;
+    text-shadow: none;
 }
 
 .add_categories input {
     display: block;
     width: 100%;
     padding: 0.5rem;
-    border: none;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
     outline: none;
+
     margin-top: 5px;
+}
+
+.add_categories input:focus {
+    border-color: #7c3aed;
 }
 
 .add_categories button {
     margin: 20px auto;
     display: block;
+
     width: 150px;
     height: 40px;
+
     border: none;
+    border-radius: 6px;
+
+    background: #7c3aed;
+    color: white;
+    font-weight: 600;
+}
+
+.add_categories button:hover {
+    background: #6d28d9;
 }
 
 .categories {
     max-height: 500px;
     overflow: scroll;
     scrollbar-width: none;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
 }
 
 .categories table {
     width: 100%;
     border-collapse: collapse;
-    background: #0000002d;
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.categories table th {
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
 }
 
 .categories table td {
     text-align: center;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+}
+
+.categories table tr:nth-child(even) {
+    background: #172033;
 }
 
 .categories button {
     height: 30px;
     width: 30px;
+
     margin-left: 2px;
-    border: 1px solid black;
-    background-color: transparent;
+
+    border: 1px solid #475569;
+    border-radius: 4px;
+
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.categories button:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
 }

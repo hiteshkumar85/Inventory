@@ -1,10 +1,18 @@
 #reportBydate {
     width: 60%;
     height: 50%;
+
     padding: 10px;
     margin: 20px auto;
-    background: #70a8f8;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+
     text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #reportBydate form {
@@ -14,28 +22,47 @@
 }
 
 #reportBydate form h1 {
-    color: white;
-    font-size: 1.5rem;  
-    text-shadow: 0 0 5px black;
-} 
+    color: #f8fafc;
+    font-size: 1.5rem;
+    text-shadow: none;
+}
 
 #reportBydate form h3 {
-    color: white;
+    color: #cbd5e1;
     margin: 10px;
-    text-shadow: 0 0 5px black;
+    text-shadow: none;
 }
 
 #reportBydate form select {
     width: 30%;
-    padding: 10px 0;   
-    border: none;
+
+    padding: 10px 0;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
     outline: none;
+}
+
+#reportBydate form select:focus {
+    border-color: #7c3aed;
 }
 
 #reportBydate form input[type="date"] {
     width: 30%;
+
     padding: 10px 10px;
-    border: none;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    outline: none;
+}
+
+#reportBydate form input[type="date"]:focus {
+    border-color: #7c3aed;
 }
 
 #reportBydate form div.input {
@@ -45,15 +72,35 @@
 
 #reportBydate form div.input > button {
     width: 50px;
+
+    background: #7c3aed;
+    color: white;
+
     border: none;
+}
+
+#reportBydate form div.input > button:hover {
+    background: #5b21b6;
 }
 
 #reportBydate .generate_btn {
     height: 40px;
     width: 150px;
-    border: none;
+
     margin: 50px auto;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #7c3aed;
+    color: white;
+
     font-size: 15px;
+    font-weight: 600;
+}
+
+#reportBydate .generate_btn:hover {
+    background: #5b21b6;
 }
 
 div.filter {

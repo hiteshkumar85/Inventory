@@ -5,30 +5,34 @@
     align-items: center;
     justify-content: center;
     gap: 1%;
-    background: #70a8f8;
+    background: #020617;
 }
 
 .container {
-    background: white;
+    background: #0f172a;
     height: 96%;
     width: 78%;
     border-radius: 0.5rem;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 10px;
-    background: #9b98984b;
+    padding-inline: 15px;
+    background: #1e293b;
+    border: 1px solid #334155;
     width: 99%;
     height: 50px;
     border-radius: 0.5rem;
     margin: 6px auto;
+    color: #f8fafc;
 }
 
-.header>.profile {
-    background: #00000027;
+.header > .profile {
+    background: #334155;
     height: 37px;
     width: 170px;
     border-radius: 0.5rem;
@@ -36,19 +40,25 @@
     align-items: center;
     padding-inline: 7px;
     justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.header>.profile>.profilePhoto{
+.header > .profile:hover {
+    background: #475569;
+}
+
+.header > .profile > .profilePhoto {
     height: 30px;
     width: 30px;
 }
 
-.header>.profile>.profilePhoto img {
+.header > .profile > .profilePhoto img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    border: 2px solid #64748b;
 }
-
 
 .header .profile .profileName {
     display: flex;
@@ -57,12 +67,14 @@
     align-items: center;
     position: relative;
     justify-content: space-around;
+    color: #f8fafc;
 }
 
-.header .profile .profileName i{
+.header .profile .profileName i {
     position: absolute;
     right: 0;
     top: 25%;
+    color: #cbd5e1;
 }
 
 .header .dropdown {
@@ -71,17 +83,27 @@
     top: 80px;
     display: flex;
     flex-direction: column;
-    background: #b5b2b2;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 100;
 }
 
 .header .dropdown a {
-    width: 120px;
+    width: 150px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 550;
-    border-top: 1px solid white;
+    font-size: 15px;
+    font-weight: 500;
+    color: #f8fafc;
+    border-top: 1px solid #334155;
+    transition: 0.3s;
+}
+
+.header .dropdown a:hover {
+    background: #7c3aed;
 }

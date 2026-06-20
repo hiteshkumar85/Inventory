@@ -8,13 +8,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 5px 20px;
-    background: #70a8f8;
+
+    background: #7c3aed;
+    border-radius: 8px 8px 0 0;
 }
 
 .monthlySalesReportHeader h1 {
-    color: white;
-    text-shadow: 0 0 5px black;
+    color: #ffffff;
+    text-shadow: none;
 }
 
 .monthlySalesReportHeader form {
@@ -25,51 +28,102 @@
 .monthlySalesReportHeader select {
     height: 30px;
     width: 100px;
-    border: none;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
     outline: none;
+
     text-align: center;
 }
 
+.monthlySalesReportHeader select:focus {
+    border-color: #a78bfa;
+}
+
 .monthlySalesReportHeader form button {
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
-    font-size: 16px;
     height: 30px;
     width: 70px;
-    text-shadow: 0 0 5px black;
+
+    border: none;
+
+    color: white;
+    background: #5b21b6;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.monthlySalesReportHeader form button:hover {
+    background: #4c1d95;
 }
 
 #monthlySalesReport table {
     width: 100%;
+
     max-height: 500px;
     overflow: scroll;
     scrollbar-width: none;
-    background-color: #0000000e;
+
+    background: #1e293b;
+    color: #f8fafc;
+
     border-collapse: collapse;
-    
+}
+
+#monthlySalesReport table th {
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+    padding: 10px;
 }
 
 #monthlySalesReport table td {
     text-align: center;
+
+    color: #cbd5e1;
+
+    border: 1px solid #334155;
+    padding: 10px;
 }
 
-#monthlySalesReport table th:nth-child(1){
+#monthlySalesReport table tr:nth-child(even) {
+    background: #172033;
+}
+
+#monthlySalesReport table tfoot {
+    background: #0f172a;
+    font-weight: 600;
+}
+
+#monthlySalesReport table tfoot td {
+    color: #f8fafc;
+}
+
+#monthlySalesReport table th:nth-child(1) {
     width: 10%;
 }
-#monthlySalesReport table th:nth-child(2){
+
+#monthlySalesReport table th:nth-child(2) {
     width: 25%;
 }
-#monthlySalesReport table th:nth-child(3){
+
+#monthlySalesReport table th:nth-child(3) {
     width: 25%;
 }
-#monthlySalesReport table th:nth-child(4){
+
+#monthlySalesReport table th:nth-child(4) {
     width: 10%;
 }
-#monthlySalesReport table th:nth-child(5){
+
+#monthlySalesReport table th:nth-child(5) {
     width: 15%;
 }
 
-#monthlySalesReport table tfoot td:nth-child(1){
+#monthlySalesReport table tfoot td:nth-child(1) {
     text-align: end;
 }

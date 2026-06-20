@@ -28,14 +28,24 @@ const Add_photo = () => {
   }
 
   const h = {
-    "width": "400px",
-    "boxShadow": "2px 2px 5px black",
-    "height": "50px",
-    "margin": "10px auto",
-    "display": "flex",
-    "alignItems": "center",
-    "justifyContent": "space-around",
-  }
+    width: "400px",
+    height: "50px",
+  
+    margin: "10px auto",
+  
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+  
+    background: "#1e293b",
+    color: "#f8fafc",
+  
+    border: "1px solid #334155",
+    borderRadius: "8px",
+  
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.25)",
+  };
+  
   return (
     <form id='add_photo' onSubmit={handleSubmit(addPhotoForm)} style={h}>
       <input type="file" accept='image/*'

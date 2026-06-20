@@ -1,35 +1,80 @@
 form#add-sale {
     width: 50%;
     height: 400px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.228);
+
     margin: 20px auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 form#add-sale h1 {
+    width: 100%;
+
     text-align: center;
     padding-block: 10px;
-    background: #70a8f8;
-    width: 100%;
-    color: white;
-    text-shadow: 0 0 5px black;
+
+    background: #7c3aed;
+    color: #ffffff;
+
+    border-radius: 8px 8px 0 0;
 }
 
-form#add-sale select ,
+form#add-sale select,
 form#add-sale input {
-    padding-block: 1rem;
-    font-size: 16px;
     width: 90%;
-    
+
+    padding: 1rem;
+
+    font-size: 16px;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+form#add-sale select:focus,
+form#add-sale input:focus {
+    border-color: #7c3aed;
+}
+
+form#add-sale select option {
+    background: #0f172a;
+    color: #f8fafc;
 }
 
 form#add-sale button {
     width: 150px;
     height: 40px;
-    border: none;
-    font-size: 16px;
+
     margin-top: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #7c3aed;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form#add-sale button:hover {
+    background: #5b21b6;
 }

@@ -1,53 +1,114 @@
 #addProduct {
     width: 60%;
     height: 300px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.279);
+
     margin: 20px auto;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #addProduct h1 {
-    color: white;
-    text-shadow: 0 0 5px black;
-    background: #70a8f8;
     text-align: center;
     padding-block: 10px;
-} 
+
+    background: #7c3aed;
+    color: #ffffff;
+
+    border-radius: 8px 8px 0 0;
+}
 
 #addProduct > div {
     height: 40px;
+
     display: flex;
     justify-content: center;
+
     margin-block: 10px;
 }
 
 input#title {
     width: 80%;
-    outline: none;
+
     padding-inline: 10px;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
+    outline: none;
 }
 
-select#category ,
+select#category,
 select#photo {
     width: 40%;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
     outline: none;
 }
 
-input#quantity ,
-input#buyingPrice ,
+input#quantity,
+input#buyingPrice,
 input#sellingprice {
     width: 28.5%;
+
     padding-inline: 10px;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
     outline: none;
+}
+
+input#title:focus,
+select#category:focus,
+select#photo:focus,
+input#quantity:focus,
+input#buyingPrice:focus,
+input#sellingprice:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+select option {
+    background: #0f172a;
+    color: #f8fafc;
 }
 
 #addProduct button {
     height: 45px;
     width: 150px;
-    font-size: 16px;
-    border: none;
+
     margin: 10px auto;
     display: block;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #7c3aed;
     color: white;
-    text-shadow: 0 0 5px black;
-    background: #70a8f8;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#addProduct button:hover {
+    background: #5b21b6;
+    transform: translateY(-2px);
 }

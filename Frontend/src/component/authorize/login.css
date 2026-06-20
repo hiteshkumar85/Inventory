@@ -1,16 +1,24 @@
 .loginContainer {
     height: 400px;
     width: 370px;
-    border-radius: 0.3rem;
-    padding: 15px;
-    color: white;
-    text-shadow: 0 0 5px black;
-    box-shadow: 0 0 5px white;
+    border-radius: 12px;
+    padding: 25px;
+
+    background: #0f172a; /* slate-900 */
+    border: 1px solid #334155;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(124, 58, 237, 0.15);
+
+    color: #f8fafc;
 }
 
 .loginContainer h1 {
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    color: #f8fafc;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 .loginContainer div {
@@ -18,28 +26,59 @@
     flex-direction: column;
 }
 
-.loginContainer div> label {
-    margin-top: 10px;
-    font-size: 17px;
+.loginContainer div > label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #cbd5e1;
 }
 
-.loginContainer div> input {
-    height: 40px;
-    padding-inline: 5px;
-    border: none;
+.loginContainer div > input {
+    height: 42px;
+    padding-inline: 12px;
+
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    color: #f8fafc;
     outline: none;
+    transition: 0.3s ease;
+}
+
+.loginContainer div > input::placeholder {
+    color: #94a3b8;
+}
+
+.loginContainer div > input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
 .loginContainer button {
-    height: 40px;
-    width: 150px;
-    margin: 30% auto;
-    display: block;
-    font-size: 16px;
-    font-weight: 550;
-    border: 1px solid white;
-    background: transparent;
+    height: 42px;
+    width: 100%;
+    margin-top: 35px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #7c3aed;
     color: white;
-    text-shadow: 0 0 5px black;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s ease;
 }
 
+.loginContainer button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}
+
+.loginContainer button:active {
+    transform: translateY(0);
+}

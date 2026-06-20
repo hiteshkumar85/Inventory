@@ -1,15 +1,19 @@
 .navbar {
-    color: white;
-    /* background: red; */
+    color: #f8fafc;
+    background: #0f172a;
     padding-block: 15px;
     height: 100vh;
     width: 18%;
+    border-right: 1px solid #334155;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.25);
 }
 
 .navbar h1 {
     text-align: center;
     padding-block: 12px;
-    text-shadow: 0 0 5px black;
+    color: #ffffff;
+    text-shadow: none;
+    border-bottom: 1px solid #334155;
 }
 
 ul {
@@ -25,20 +29,38 @@ ul li {
 
 .links {
     text-decoration: none;
-    padding-block: 10px;
-    color: white;
-    text-shadow: 0 0 5px black;
+    padding: 12px 15px;
+    color: #cbd5e1;
     display: block;
+    text-shadow: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.links:hover {
+    background: #1e293b;
+    color: #ffffff;
 }
 
 .submenu {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-left: 15px;
+    border-left: 2px solid #334155;
+    padding-left: 10px;
 }
 
 .subLinks {
-    color: white;
+    color: #94a3b8;
     text-decoration: none;
     font-size: 18px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.subLinks:hover {
+    background: #1e293b;
+    color: #ffffff;
 }

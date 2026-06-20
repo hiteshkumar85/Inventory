@@ -1,19 +1,30 @@
 #showReport {
     height: 100vh;
     width: 100%;
-    background-color: white;
+
+    background: #020617;
+    color: #f8fafc;
 }
 
 #showReport .report {
     width: 90%;
     height: 90%;
+
     margin: 2% auto;
-    border: 1px solid black;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+
     display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 5px 10px;
     flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 5px 10px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .showReportHeader {
@@ -24,10 +35,12 @@
 .showReportHeader h1 {
     font-size: 27px;
     margin-block: 10px;
+    color: #f8fafc;
 }
 
 .showReportHeader h4 {
     margin-block: 5px;
+    color: #cbd5e1;
 }
 
 div.btn {
@@ -39,44 +52,103 @@ div.btn {
 div.btn button {
     height: 40px;
     width: 100px;
-    border-radius: 0.5rem;
+
     border: none;
+    border-radius: 8px;
+
     font-size: 15px;
     font-weight: 550;
+
+    background: #7c3aed;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+div.btn button:hover {
+    background: #5b21b6;
 }
 
 #showReport #table {
     width: 90%;
     margin-top: 20px;
+
     text-align: center;
     border-collapse: collapse;
+
+    background: #1e293b;
+    color: #f8fafc;
 }
 
-#showReport #table td, 
 #showReport #table th {
-    border: 1px solid black;
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    padding: 10px;
 }
 
-#showReport #table th:nth-child(1){
+#showReport #table td {
+    border: 1px solid #334155;
+    padding: 10px;
+    color: #cbd5e1;
+}
+
+#showReport #table tr:nth-child(even) {
+    background: #172033;
+}
+
+#showReport #table th:nth-child(1) {
     width: 10%;
 }
 
-#showReport #table th:nth-child(4){
+#showReport #table th:nth-child(4) {
     width: 10%;
 }
 
-#showReport #table th:nth-child(5){
+#showReport #table th:nth-child(5) {
     width: 15%;
 }
 
-#showReport #table tfoot td:nth-child(1){
+#showReport #table tfoot {
+    background: #0f172a;
+    font-weight: 600;
+}
+
+#showReport #table tfoot td {
+    color: #f8fafc;
+}
+
+#showReport #table tfoot td:nth-child(1) {
     text-align: end;
     padding-right: 10px;
 }
 
+/* Print Version */
 @media print {
-  #print ,
-  #back {
-    display: none;
-  }
+
+    #print,
+    #back {
+        display: none;
+    }
+
+    #showReport {
+        background: white;
+        color: black;
+    }
+
+    #showReport .report {
+        background: white;
+        color: black;
+        border: 1px solid black;
+        box-shadow: none;
+    }
+
+    #showReport #table,
+    #showReport #table th,
+    #showReport #table td {
+        color: black;
+        background: white;
+        border: 1px solid black;
+    }
 }

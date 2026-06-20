@@ -1,37 +1,82 @@
 #add_group {
     width: 350px;
     height: 350px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.382);
-    border-radius: 5px;
+
     margin: 5% auto;
+
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #add_group h1 {
     text-align: center;
     padding-block: 0.5rem;
-    background: #70a8f8;
+
+    background: #7c3aed;
+    color: #ffffff;
+
+    border-radius: 8px 8px 0 0;
 }
 
 #add_group > div {
-    margin-block: 5px;
+    margin-block: 8px;
     padding-inline: 20px;
 }
 
-#add_group > div >label{
+#add_group > div > label {
     display: block;
+
+    margin-bottom: 5px;
+
+    color: #cbd5e1;
+    font-weight: 500;
 }
 
-#add_group >div>input ,
-#add_group > div> select#status{
+#add_group > div > input,
+#add_group > div > select#status {
     width: 100%;
-    padding-block: 0.3rem;
+
+    padding: 8px 10px;
+
+    background: #0f172a;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+#add_group > div > input:focus,
+#add_group > div > select#status:focus {
+    border-color: #7c3aed;
 }
 
 #add_group > button {
     display: block;
+
     margin: 20% auto;
+
     height: 35px;
     width: 150px;
-    border-radius: 5px;
+
     border: none;
+    border-radius: 5px;
+
+    background: #7c3aed;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#add_group > button:hover {
+    background: #5b21b6;
 }
