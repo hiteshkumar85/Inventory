@@ -50,7 +50,7 @@ const header = () => {
       <div className="date">{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</div>
       <div className="profile" onClick={handleDropdown}>
         <div className="profilePhoto">
-          <img src={profile.image ? `${process.env.BACKEND_BASE_URL}/profileImage/${profile.image}` : image} />
+          <img src={profile.image ? `${import.meta.env.VITE_API_URL}/profileImage/${profile.image}` : image} />
         </div>
         <div className="profileName">
           {profile.name}

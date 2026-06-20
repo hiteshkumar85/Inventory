@@ -18,7 +18,7 @@ const Login = () => {
 
   async function login(data) {
     try {
-      const res = await axios.post(`${process.env.BACKEND_BASE_URL}/api/login`, data);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, data);
       localStorage.setItem('token', res.data.token);
       toast.success("welcome, Login successfully!");
       reset();
@@ -32,7 +32,7 @@ const Login = () => {
   
   // if all users are deleted, store a user 
   useEffect(()=>{
-    axios.post(`${process.env.BACKEND_BASE_URL}/api/saveAmin`);
+    axios.post(`${import.meta.env.VITE_API_URL}/api/saveAmin`);
   },[]);
   
   return (
