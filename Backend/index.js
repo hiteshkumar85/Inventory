@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./dbconnection');
 const path = require('path');
+const { setServers } = require('node:dns/promises');
+setServers(['1.1.1.1', '8.8.8.8']);
 dotenv.config();
 const app = express();
 connectDB();
